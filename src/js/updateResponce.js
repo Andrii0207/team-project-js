@@ -19,7 +19,7 @@ async function updateResponce(data, page) {
           return objIdGenres[id];
         })
         .reduce((acc, element, index, array) => {
-          console.log(index);
+          // console.log(index);
           if (index > 2) {
             acc = [...array.slice(0, 2)];
 
@@ -39,6 +39,7 @@ function getGenresId() {
 
   return onGetFilmGenres().then(data => {
     const dataGenres = data.data.genres;
+
     dataGenres.forEach(item => {
       genresObj[item.id] = item.name;
     });

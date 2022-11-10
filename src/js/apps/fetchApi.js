@@ -12,6 +12,7 @@ async function fetchAllMovies() {
 }
 
 // ===================================================================
+
 async function fetchMoviesGenres() {
   const url = 'https://api.themoviedb.org/3/genre/movie/list';
   const param = new URLSearchParams({
@@ -24,6 +25,7 @@ async function fetchMoviesGenres() {
 }
 
 // ===================================================================
+
 async function fetchTVShowGenres() {
   const url = 'https://api.themoviedb.org/3/genre/tv/list';
   const param = new URLSearchParams({
@@ -49,9 +51,4 @@ async function fetchAboutMovies(movieID) {
   return response;
 }
 
-export {
-  fetchAllMovies,
-  fetchMoviesGenres,
-  fetchTVShowGenres,
-  fetchAboutMovies,
-};
+export { fetchAllMovies, fetchMoviesGenres, fetchTVShowGenres, fetchAboutMovies };

@@ -79,8 +79,7 @@
 
   transform: scale(1);
   transition: transform 1000ms var(--timing-function);
-  box-shadow: 2px 4px 12px 0px #cfe414,
-    0px 2px 5px 0px rgba(255, 255, 255, 0.507),
+  box-shadow: 2px 4px 12px 0px #cfe414, 0px 2px 5px 0px rgba(255, 255, 255, 0.507),
     0px 2px 3px -1px rgba(255, 255, 255, 0.137);
   padding: 0;
   margin: 0;
@@ -117,8 +116,7 @@
   height: 24vh;
   transform: scale(2);
   transition: transform 1000ms var(--timing-function);
-  box-shadow: 2px 4px 12px 0px #cfe414,
-    0px 2px 5px 0px rgba(255, 255, 255, 0.507),
+  box-shadow: 2px 4px 12px 0px #cfe414, 0px 2px 5px 0px rgba(255, 255, 255, 0.507),
     0px 2px 3px -1px rgba(255, 255, 255, 0.137);
   @media screen and (min-width: 768px) {
     height: 28vh;
@@ -138,8 +136,7 @@
 
   @media screen and (min-width: 768px) {
     flex-basis: calc(
-      100% / var(--section-filter-link-tablet-set) -
-        var(--section-filter-link-tablet-gap)
+      100% / var(--section-filter-link-tablet-set) - var(--section-filter-link-tablet-gap)
     );
     margin-left: var(--section-filter-link-tablet-gap);
     margin-bottom: 30px;
@@ -147,8 +144,7 @@
 
   @media screen and (min-width: 1280px) {
     flex-basis: calc(
-      100% / var(--section-filter-link-desktop-set) -
-        var(--section-filter-link-desktop-gap)
+      100% / var(--section-filter-link-desktop-set) - var(--section-filter-link-desktop-gap)
     );
     margin-left: var(--section-filter-link-desktop-gap);
   }
@@ -484,10 +480,10 @@
 
   @for $i from 1 through $star-count {
     &:nth-child(#{$i}) {
-      --star-tail-length: #{random_range(500em, 750em) / 100};
-      --top-offset: #{random_range(0vh, 10000vh) / 100};
-      --fall-duration: #{random_range(6000, 12000s) / 1000};
-      --fall-delay: #{random_range(0, 10000s) / 1000};
+      // --star-tail-length: #{random_range(500em, 750em) / 100};
+      // --top-offset: #{random_range(0vh, 10000vh) / 100};
+      // --fall-duration: #{random_range(6000, 12000s) / 1000};
+      // --fall-delay: #{random_range(0, 10000s) / 1000};
     }
   }
 

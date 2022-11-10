@@ -27,16 +27,16 @@ async function onGetFilmGenres() {
   }
 }
 
-async function onGetTVGenres() {
-  const BASE_URL = 'https://api.themoviedb.org/3/genre/tv/list';
-  const URL = `${BASE_URL}?api_key=${API_KEY}`;
+// async function onGetTVGenres() {
+//   const BASE_URL = 'https://api.themoviedb.org/3/genre/tv/list';
+//   const URL = `${BASE_URL}?api_key=${API_KEY}`;
 
-  try {
-    const responce = axios.get(URL);
-    return responce;
-  } catch (error) {
-    console.error('Something wrong! Can not search films' + error);
-  }
-}
+//   try {
+//     const responce = axios.get(URL);
+//     return responce;
+//   } catch (error) {
+//     console.error('Something wrong! Can not search films' + error);
+//   }
+// }
 
 export { fetchSearchFilm, onGetFilmGenres, onGetTVGenres };

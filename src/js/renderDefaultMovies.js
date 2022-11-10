@@ -32,20 +32,21 @@ export function renderDefaultMovies() {
   fetchDefaultMoviesByApi()
     .then(data => {
       const resp = updateResponce(data.results);
+      // console.log('renderDefaultMovies then1:', resp);
       return resp;
     })
-    .then(resp => {
-      ul.insertAdjacentHTML('beforeend', oneMovieCardTpl(resp));
+    .then(data => {
+      ul.insertAdjacentHTML('beforeend', oneMovieCardTpl(data));
+      // console.log('renderDefaultMovies then2:', data);
 
       if (ul.childElementCount > 20) smoothScroll();
 
-      if (resp.page === 1000) {
-        Notiflix.Notify.info(
-          "We're sorry, but you've reached the end of films collection."
-        );
+      if (data === 1000) {
+        Notiflix.Notify.info("We're sorry, but you've reached the end of films collection.");
         button.classList.add('is-hidden');
       }
-    });
+    })
+    .catch(error => console.log(error));
   // console.log('renderDefaultMovies data.results', data.results);
   // updateResponce(data.results);
   // console.log('updateResponce', responce);

@@ -11,6 +11,8 @@ import { spinnerOn, spinnerOff } from './loader';
 
 refs.form.addEventListener('submit', onClickSubmit);
 refs.loadMore.addEventListener('click', onLoadMore);
+// refs.loadMore.setAttribute('hidden', 'hidden');
+// console.log(refs.loadMore);
 
 let value = null;
 let page = 1;
@@ -39,9 +41,25 @@ function onClickSubmit(event) {
 function onLoadMore() {
   page += 1;
   fetchSearchFilm(value, page)
-    .then(data => checkInputData(data, page))
+    .then(data => checkQuantityOfPages(data, page))
     .catch(error => console.log(error));
   smoothScroll();
 }
 
-export default onClickSubmit;
+function checkQuantityOfPages(data, page) {
+  const dataCurrentPage = data.data.page;
+  const dataTotalPages = data.data.total_pages;
+  console.log('checkQuantityOfPages page:', page);
+  console.log('checkQuantityOfPages dataCurrentPage:', dataCurrentPage);
+  console.log('checkQuantityOfPages dataTotalPages:', dataTotalPages);
+
+  if (page == dataTotalPages) {
+    // Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
+    refs.loadMore.setAttribute('hidden', 'hidden');
+    // refs.loadMore.classList.add('is-hidden');
+    return;
+  }
+  checkInputData(data, page);
+}
+
+export { onClickSubmit, checkQuantityOfPages };

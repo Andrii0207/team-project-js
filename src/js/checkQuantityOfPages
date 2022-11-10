@@ -1,0 +1,8 @@
+import
+
+
+function checkQuantityOfPages() {
+
+}
+
+export default checkQuantityOfPages;
